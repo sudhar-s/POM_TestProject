@@ -9,15 +9,15 @@ public class GeneralUtil
 	{
 		int max = Constants.MAX_LIMIT_OF_RANDOM_NUMBER_EMAIL;
 		Random rnd = new Random();
-		int RN = rnd.nextInt(max);
-		return RN;
+		int randomNumber = rnd.nextInt(max);
+		return randomNumber;
 	}
 	
 	public static int getRandomNumber_Phone()
 	{
 		int max = Constants.MAX_LIMIT_OF_RANDOM_NUMBER_PHONE;
 		Random rnd = new Random();
-		int RN = rnd.nextInt(max);
-		return RN;
+		int randomNumber = rnd.nextInt(max);
+		return randomNumber;
 	}
 }

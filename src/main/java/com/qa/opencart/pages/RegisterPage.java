@@ -10,11 +10,13 @@ import org.openqa.selenium.WebElement;
 import com.qa.opencart.utils.Constants;
 import com.qa.opencart.utils.ElementUtil;
 import com.qa.opencart.utils.GeneralUtil;
+import com.qa.opencart.utils.JavaScriptUtil;
 
 public class RegisterPage 
 {
 	private WebDriver driver;
 	private ElementUtil elementutil;
+	private JavaScriptUtil javascriptutil;
 	
 	
 	/*********************************************************************************/
@@ -61,6 +63,7 @@ public class RegisterPage
 	{
 		this.driver = driver;
 		elementutil = new ElementUtil(this.driver);
+		javascriptutil = new JavaScriptUtil(this.driver);
 	}
 	
 	/*********************************************************************************/
@@ -195,10 +198,13 @@ public class RegisterPage
 		elementutil.doSendKeys(textBoxPassword, pwd);
 		System.out.println("--< Password is :" + pwd);
 		elementutil.doSendKeys(textBoxConfirmPassword, pwd);
+		
 		if(subscribe.equals("yes"))
 			elementutil.doClick(radioButtonYes);
 		else
 			elementutil.doClick(radioButtonNo);
+		
+		javascriptutil.scrollIntoView(elementutil.getElement(checkBoxPrivacyPolicy));
 		elementutil.doClick(checkBoxPrivacyPolicy);
 		elementutil.doClick(buttonContinue);
 		
