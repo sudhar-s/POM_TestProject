@@ -16,7 +16,7 @@ public class JavaScriptUtil
 	public void flash(WebElement element)
 	{
 		String bgcolor = element.getCssValue("backgroundColor");
-		for(int i=0; i<20 ; i++)
+		for(int i=0; i<10 ; i++)
 		{
 			changeColor("rgb(0,200,0)", element);
 			changeColor(bgcolor, element);

@@ -36,6 +36,7 @@ public class BaseTest
 		driver.get(prop.getProperty("url"));
 		
 		homepage = new HomePage(driver);
+		loginpage = new LoginPage(driver);
 		
 	}
 	

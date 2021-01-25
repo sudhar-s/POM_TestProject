@@ -17,33 +17,33 @@ public class ProductSearchPageTest extends BaseTest
 		productsearchpage = accountspage.doSearch_iPhone();
 	}
 	
-	@Test
+	@Test(priority=1)
 	public void titleTest()
 	{
 		String title = productsearchpage.getPageTitle();
 		System.out.println("--< Page Title is : " + title);
-		Assert.assertEquals(title, ("Search - "+Constants.PRODUCT_IPHONE));
+		Assert.assertEquals(title, "Search - "+(Constants.PRODUCT_IPHONE));
 	}
 	
-	@Test
+	@Test(priority=2)
 	public void headerSearchVisibleTest()
 	{
 		Assert.assertTrue(productsearchpage.isHeaderSearchVisible());
 	}
 	
-	@Test
+	@Test(priority=3)
 	public void headerSearchCriteriaVisibleTest()
 	{
 		Assert.assertTrue(productsearchpage.isHeaderSearchCriteriaVisible());
 	}
 	
-	@Test
+	@Test(priority=4)
 	public void productAvailableTest()
 	{
 		Assert.assertTrue(productsearchpage.isProductAvailable());
 	}
 	
-	@Test
+	@Test(priority=5)
 	public void clickProductTest()
 	{
 		productinfopage = productsearchpage.doClickProduct();

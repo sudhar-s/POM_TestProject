@@ -13,5 +13,5 @@ public class Constants
 	public static final String EMAIL_ID_BEGINS = "testUser";
 	public static final String EMAIL_ID_ENDS = "@gmail.com";
 	
-	public static final String PRODUCT_IPHONE = "iphone";
+	public static final String PRODUCT_IPHONE = "iPhone";
 }

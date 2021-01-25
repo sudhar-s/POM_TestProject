@@ -11,8 +11,8 @@
 
 	<test name="Accounts page Test">
 		<classes>
+			<class name="com.qa.opencart.tests.HomePageTest" />
 			<class name="com.qa.opencart.tests.LoginPageTest" />
-			<class name="com.qa.opencart.tests.RegisterPageTest" />
 		</classes>
 
 	</test>
