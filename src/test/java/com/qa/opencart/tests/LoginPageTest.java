@@ -7,13 +7,14 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.qa.opencart.base.BaseTest;
+import com.qa.opencart.pages.LoginPage;
 
 public class LoginPageTest extends BaseTest
 {
 	@BeforeClass
 	public void clickLoginLinkTest()
-	{
-		loginpage = homepage.doClickLoginLink();	
+	{	
+		loginpage = homepage.doClickLoginLink();
 	}
 	
 	@Test(priority=1)

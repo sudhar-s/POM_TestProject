@@ -3,8 +3,8 @@ package com.qa.opencart.base;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 import com.qa.opencart.factory.DriverFactory;
 import com.qa.opencart.pages.AccountsPage;
@@ -16,9 +16,9 @@ import com.qa.opencart.pages.RegisterPage;
 
 public class BaseTest
 {
-	DriverFactory df;
+	public DriverFactory df;
 	public Properties prop;
-	WebDriver driver;
+	public WebDriver driver;
 	public HomePage homepage;
 	public LoginPage loginpage;
 	public AccountsPage accountspage;
@@ -26,7 +26,7 @@ public class BaseTest
 	public ProductSearchPage productsearchpage;
 	public ProductInfoPage productinfopage;
 	
-	@BeforeTest
+	@BeforeClass
 	public void setUp()
 	{
 		df = new DriverFactory();
@@ -36,11 +36,10 @@ public class BaseTest
 		driver.get(prop.getProperty("url"));
 		
 		homepage = new HomePage(driver);
-		loginpage = new LoginPage(driver);
 		
 	}
 	
-	@AfterTest
+	@AfterClass
 	public void tearDown()
 	{
 		driver.quit();

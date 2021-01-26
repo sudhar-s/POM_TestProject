@@ -105,6 +105,7 @@ public class RegisterPage
 	}
 	public boolean isLabelTelephoneLabelVisible()
 	{
+		javascriptutil.scrollIntoView(elementutil.getElement(labelTelephone));
 		return elementutil.isDisplayed(labelTelephone);
 	}
 	public boolean isLabelPasswordLabelVisible()
@@ -128,6 +129,7 @@ public class RegisterPage
 	}
 	public boolean isTextBoxFirstNameTextBoxVisible()
 	{
+		javascriptutil.scrollIntoView(elementutil.getElement(textBoxFirstName));
 		return elementutil.isDisplayed(textBoxFirstName);
 	}
 	public boolean isTextBoxLastNameTextBoxVisible()
@@ -193,6 +195,7 @@ public class RegisterPage
 		elementutil.doSendKeys(textBoxLastName, ln);
 		elementutil.doSendKeys(textBoxEmail, email);
 		System.out.println("--< Email Address is :" + email);
+		javascriptutil.scrollIntoView(elementutil.getElement(textBoxTelephone));
 		elementutil.doSendKeys(textBoxTelephone, phone);
 		System.out.println("--< Telephone is :" + phone);
 		elementutil.doSendKeys(textBoxPassword, pwd);
@@ -204,13 +207,13 @@ public class RegisterPage
 		else
 			elementutil.doClick(radioButtonNo);
 		
-		javascriptutil.scrollIntoView(elementutil.getElement(checkBoxPrivacyPolicy));
 		elementutil.doClick(checkBoxPrivacyPolicy);
 		elementutil.doClick(buttonContinue);
 		
 		String msg = elementutil.doGetText(headerSuccessMsg);
 		if(msg.equals(Constants.ACCOUNT_SUCCESS_MESSAGE))
 		{
+			javascriptutil.scrollIntoView(elementutil.getElement(linkLogout));
 			elementutil.doClick(linkLogout);
 			elementutil.doClick(linkRegister);
 			return true;
